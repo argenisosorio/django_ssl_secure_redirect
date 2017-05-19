@@ -14,8 +14,10 @@ class SecurityMiddleware(MiddlewareMixin):
         self.xss_filter = settings.SECURE_BROWSER_XSS_FILTER
         self.redirect = settings.SECURE_SSL_REDIRECT
         self.redirect_host = settings.SECURE_SSL_HOST
-        self.redirect_exempt = [re.compile(r) for r in settings.SECURE_REDIRECT_EXEMPT]
-        self.redirect_urls = [re.compile(r) for r in settings.SECURE_REDIRECT_URLS]
+        self.ssl_urls = getattr(settings, 'SECURE_REDIRECT_URLS', [])
+        self.ssl_ignore_urls = getattr(settings, 'SECURE_REDIRECT_EXEMPT', [])
+        self.redirect_exempt = [re.compile(r) for r in self.ssl_ignore_urls]
+        self.redirect_urls = [re.compile(r) for r in self.ssl_urls]
         self.get_response = get_response
 
     def process_request(self, request):
@@ -23,7 +25,7 @@ class SecurityMiddleware(MiddlewareMixin):
         secure = False
         ignore = False
         if (self.redirect and not request.is_secure() and 
-                any(pattern.search(path)
+                 any(pattern.search(path)
                         for pattern in self.redirect_exempt)):
             ignore = True
         if not ignore:
