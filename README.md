@@ -1,5 +1,5 @@
-# Django ssl redirect
-Django ssl redirect is a middleware for automatically redirecting to HTTPS for specific URLs
+# Django ssl secure redirect
+Django ssl secure redirect is a middleware for automatically redirecting to HTTPS for specific URLs
 
 ## Versions
 
@@ -7,14 +7,14 @@ Tested on **Django 1.10.7**
 
 ## Getting Started
 
-Clone this repository or copy the folder called **django_ssl_redirect** in the root of the
-project and now add the middleware **django_ssl_redirect** to your MIDDLEWARE's and comment
+Clone this repository or copy the folder called **django_ssl_secure_redirect** in the root of the
+project and now add the middleware **django_ssl_secure_redirect** to your MIDDLEWARE's and comment
 the django middleware default **django.middleware.security.SecurityMiddleware**
 like this:
 
 ```python
 MIDDLEWARE = [
-    'django_ssl_redirect.middleware.django_ssl_redirect.SecurityMiddleware',
+    'django_ssl_secure_redirect.middleware.django_ssl_secure_redirect.SecurityMiddleware',
     #'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
