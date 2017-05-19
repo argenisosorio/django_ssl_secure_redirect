@@ -34,6 +34,9 @@ If set to **True**, causes SecurityMiddleware to redirect all non-HTTPS requests
 Is a list of urls that should be secure. Any request to a path which starts with one of these will be required to use https.
 In this example try to admin urls.
 
+- SECURE_REDIRECT_EXEMPT
+Should be a list of regular expressions. Any URL path matching a regular expression in this list will not be redirected to HTTPS 
+
 ## Configuration
 
 Set to your **settings.py**
@@ -41,4 +44,5 @@ Set to your **settings.py**
 ```python
 SECURE_SSL_REDIRECT = True
 SECURE_REDIRECT_URLS = ['admin']
+#SECURE_REDIRECT_EXEMPT = ['admin']
 ```
