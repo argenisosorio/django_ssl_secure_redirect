@@ -3,7 +3,7 @@ Django ssl secure redirect is a middleware for automatically redirecting to HTTP
 
 ## Versions
 
-Tested on **Django 1.10.7**
+Tested on **Django 1.10.6**
 
 ## Getting Started
 
