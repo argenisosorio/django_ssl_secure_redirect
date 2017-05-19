@@ -7,7 +7,7 @@ Tested on Django==1.10.7
 
 ## Getting Started
 
-Copy the folder called (django_ssl_redirect) in the root of the project and now add the
+Copy the folder called ##### django_ssl_redirect ##### in the root of the project and now add the
 middleware (django_ssl_redirect.middleware.django_ssl_redirect.py) to your MIDDLEWARE's
 and comment the django middleware default(django.middleware.security.SecurityMiddleware)
 like this:
