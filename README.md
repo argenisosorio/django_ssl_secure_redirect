@@ -42,7 +42,14 @@ Should be a list of regular expressions. Any URL path matching a regular express
 Set to your **settings.py**
 
 ```python
+# Everything goes by http, except the /admin that goes on https
 SECURE_SSL_REDIRECT = True
 SECURE_REDIRECT_URLS = ['admin']
-#SECURE_REDIRECT_EXEMPT = ['admin']
+```
+**Other example**
+```python
+# Everything goes by https, except the /admin that goes on http
+SECURE_SSL_REDIRECT = True
+SECURE_REDIRECT_URLS = ['^']
+SECURE_REDIRECT_EXEMPT = ['admin']
 ```
