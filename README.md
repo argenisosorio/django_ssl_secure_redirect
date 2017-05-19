@@ -1,6 +1,5 @@
 # Django ssl redirect
-
-### Django ssl redirect is a middleware for automatically redirecting to HTTPS for specific URLs
+Django ssl redirect is a middleware for automatically redirecting to HTTPS for specific URLs
 
 ## Versions
 
